@@ -17,13 +17,4 @@ function Player(name, marker,) {
     this.name = name;
     this.marker = marker;
     this.score = 0;
-    this.winner = function() {
-      console.log(`${this.name} is the winner`)
-      let theScore = this.score++
-      return theScore
-    };
-    this.resetBoard = ()=>{
-      console.log(this.winner())
-       return this.score = 0;
-    }
   }
