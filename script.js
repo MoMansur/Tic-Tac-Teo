@@ -18,3 +18,29 @@ function Player(name, marker,) {
     this.marker = marker;
     this.score = 0;
   }
+
+const player1 = new Player('Player One', 'X',);
+const player2 = new Player('Player Two', 'O',);
+
+//GAME BOARD FUNCTION
+function gameBoard(){
+    let board = ['','','',  '','','', '','','']; 
+  
+  function resetBoard(board){
+    board = ['','','',  '','','', '','','']; 
+    gameDisplay(board)
+    return board
+  }
+  function resetScores(){
+  
+  }
+  
+  function gameDisplay(board){
+    DOMgrid.forEach(cell => {
+      const index = parseInt(cell.getAttribute('data-index'));
+      cell.innerHTML = board[index]
+    });
+  }
+  
+  return {board, resetBoard, gameDisplay, resetScores}
+  }
