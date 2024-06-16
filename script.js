@@ -112,11 +112,11 @@ const gameFunctions = (() => {
     if (x === 'X') {
       playerOneNameDom.innerHTML = `${player1.getName()} (${player1.getMark()})`;
       playerOneScoreDom.innerHTML = player1.getScore();
-      statusMessage.innerHTML = `${player1.getName()} is the winner`;
+      statusMessage.innerHTML = `${player1.getMark()} is the winner`;
     } else {
       playerTwoNameDom.innerHTML = `${player2.getName()} (${player2.getMark()})`;
       playerTwoScoreDom.innerHTML = player2.getScore();
-      statusMessage.innerHTML = `${player2.getName()} is the winner`;
+      statusMessage.innerHTML = `${player2.getMark()} is the winner`;
     }
   }
 
@@ -231,6 +231,7 @@ const gamePlay = (() => {
     gameBoard.resetBoard(getBoard);
     playerInsertMarker(board);
   }
+  
 
   return {
     playRound,
@@ -253,9 +254,6 @@ function DOMEventHandlers() {
     updateScores();
   });
 
-  playAgainButton.addEventListener('click', () => {
-    gamePlay.playRound(getBoard);
-  });
 
   quickPlayButton.addEventListener('click', () => {
     player1.setName('Player One');
@@ -271,6 +269,10 @@ function DOMEventHandlers() {
     updateScores();
     gamePlay.playRound(getBoard);
   });
+
+  const resetBoardButton = document.getElementById('resetBoard');
+
+
 }
 
 DOMEventHandlers();
