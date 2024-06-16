@@ -35,6 +35,7 @@ This project is a simple implementation of the classic Tic Tac Toe game using HT
 - **script.js**: Implements the game logic including player turns, winner detection, score tracking, and event handling.
 
 ### Screenshots
-![image](https://github.com/MoMansur/Tic-Tac-Teo/assets/58377731/9dfa74ae-02d2-4c3a-8b43-24f1f305f3cf)
+![image](https://github.com/MoMansur/Tic-Tac-Teo/assets/58377731/ae9cb9a1-d8b7-4cad-b77b-4f493843c835)
+
 
 
