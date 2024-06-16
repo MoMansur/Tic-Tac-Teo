@@ -12,14 +12,11 @@ const playerTwoScoreDom = document.querySelector('.score2')
 //Reset Buttons
 const resetScores = document.getElementById('resetScores')
 
-
-
 function Player(name, marker,) {
   this.name = name;
   this.marker = marker;
   this.score = 0;
   this.winner = function() {
-    console.log(`${this.name} is the winner`)
     let theScore = this.score++
     return theScore
   };
@@ -32,9 +29,7 @@ function Player(name, marker,) {
 const player1 = new Player('Player One', 'X',);
 const player2 = new Player('Player Two', 'O',);
 
-console.log(player1.score++)
-console.log(player1.score++)
-console.log(player1.score++)
+
 
 
 function scores(){
@@ -75,18 +70,12 @@ let scoresArray = [player1.winner(), player2.winner()]
 //GAME FUNCTION FUNCION
 function gameFunctions(){
 
-  scoreX = 0
+ 
   function scoreCounter(gameOver){
     if(gameOver === 'X'){
       scoreDom('X')
-      resetScores.addEventListener('click', ()=>{
-        player1.resetBoard()
-        console.log('reseted')
-        console.log(scoresArray[0],scoresArray[1])
-        scoreDom('X')
-
-      })
-      console.log(scoresArray[0]++,scoresArray[1]++)
+   
+      console.log(scoreX++,)
     }else if(gameOver === 'O'){
       scoreDom('O') 
       console.log(scoresArray[0],scoresArray[1])
@@ -191,7 +180,7 @@ function gamePlay(){
     });
   
     // Update the UI to reflect the cleared board
-    getReset();
+   gameBoard().resetBoard(getBoard)
   }
 
 
@@ -257,9 +246,15 @@ function gamePlay(){
 const game = gamePlay()
 
 
-game.playRound(getBoard())
+game.playRound(getBoard)
 
 
+resetScores.addEventListener('click', ()=>{
+  player1.resetBoard()
+  console.log('reseted')
+  console.log(scoresArray[0],scoresArray[1])
+  scoreDom('X')
 
+})
 
 
