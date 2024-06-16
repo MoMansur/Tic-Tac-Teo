@@ -89,11 +89,16 @@ h1{
     
 }
 
-#resetScores, #resetBoard{
+#btnRows{
+    display: flex;
+    justify-content: center;
+}
+
+#resetScores{
     background-color: lightseagreen;
     color: black;
     font-family: 'Chewy', cursive;
-    margin: 10px;
+    margin-left: 25px;
     width: 30%;
 
 }
@@ -103,3 +108,72 @@ h1{
     font-family: 'Chewy', cursive;
 
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Modal background */
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Adjusted width */
+    max-width: 500px; /* Ensure it doesn't get too wide */
+  }
+
+ 
+
+  .btn-check{
+    margin: 10px;
+
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+
+ 
+  .quickMenuBtn{
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .quickMenuBtn button{
+    margin: 10px;
+  }
+
+  .playerOneForm, .playerTwoForm{
+    display: flex;
+    
+  }
+
+  #player1Name, #player2Name{
+    width: 350px;
+    margin: 5px;
+    height: 40px;
+  }
+
+  .formBtn{
+    display: flex;
+    justify-content: flex-end;
+    padding: 7px;
+  }
+
+  .formBtn button{
+    margin: 10px;
+  }
+
+  #player1MarkerX, #player1MarkerO{
+    margin: 10px;
+  }
