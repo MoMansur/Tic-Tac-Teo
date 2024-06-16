@@ -40,11 +40,11 @@ let scoreX =0;
 let scoreO =0;
 
 
-function gameBoard(){
+const gameBoard = (()=>{
   let board = ['','','',  '','','', '','','']; 
 
 function resetBoard(board){
-  board = ['','','',  '','','', '','','']; 
+  board.fill("");  
   gameDisplay(board)
   return board
 }
@@ -59,13 +59,15 @@ function gameDisplay(board){
   });
 }
 
-return {board, resetBoard, gameDisplay, resetScores}
-}
+return {
+  board, 
+  resetBoard, 
+  gameDisplay, 
+  resetScores}
+})()
 
-const getBoard = gameBoard().board
-const getReset = gameBoard().resetBoard(getBoard)
-
-
+// const getBoard = gameBoard().board
+// const getReset = gameBoard().resetBoard(getBoard)
 
 //GAME FUNCTION FUNCION
 function gameFunctions(){
@@ -77,7 +79,7 @@ function gameFunctions(){
       scoreDom('X', player1.score++, scoresArray[1])
     
     }else if(gameOver === 'O'){
-      scoreDom('O', scoresArray[0], scoresArray[1]++) 
+      scoreDom('O', scoresArray[0], player2.score++) 
 
     }
   }
@@ -143,12 +145,15 @@ function gameFunctions(){
 
 
 
-return {checkForWins, scoreCounter}
+return {
+  checkForWins, 
+  scoreCounter
+}
 }
 
  statusMessage.innerText = 'Play'
 //GAME PLAY FUNCTION
-function gamePlay(){
+const gamePlay =(()=>{
 
   let activePlayer = player1;
 
@@ -181,7 +186,8 @@ function gamePlay(){
     });
   
     // Update the UI to reflect the cleared board
-    gameBoard().resetBoard(board)
+
+    gameBoard.resetBoard(board)
   }
 
 
@@ -200,8 +206,8 @@ function gamePlay(){
 
    
 
-      const gameDisplay = () => gameBoard().gameDisplay(board)
-      gameDisplay(board)
+    
+      gameBoard.gameDisplay(board)
 
       
       let gameOver = gameFunctions().checkForWins(board)
@@ -239,15 +245,19 @@ function gamePlay(){
    })
 
 
-  return{playRound,playerInsertMarker, getActivePlayer, switchPlayerTurn, resetScore}
-}
+  return{
+    playRound,
+    playerInsertMarker, 
+    getActivePlayer, 
+    switchPlayerTurn,
+    resetScore
+  }
+})()
 
 
 
-const game = gamePlay()
 
-
-game.playRound(getBoard)
+gamePlay.playRound(gameBoard.board)
 
 
 
