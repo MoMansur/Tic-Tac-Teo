@@ -66,6 +66,10 @@ function gameDisplay(board){
 return {board, resetBoard, gameDisplay, resetScores}
 }
 
+const getBoard = gameBoard().board
+const getReset = gameBoard().resetBoard(getBoard)
+
+
 
 let scoresArray = [player1.winner(), player2.winner()]
 //GAME FUNCTION FUNCION
