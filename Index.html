@@ -12,7 +12,56 @@
     <h1 class="" style="color: aqua;">Tic-Tac-Toe</h1>
     <div class="container">
         
+<div class="row">
 
+    <div id="userModal" class="modal" >
+      <div class="modal-content"style="background-color: rgb(20, 55, 67);color: #fff;">
+        <h2>Enter Player Information</h2>
+        <form id="userForm" class="form">
+            <label for="player1Name">Player 1:</label>
+            <div class="playerOneForm">
+                <input type="text" id="player1Name" name="player1Name" class="form-control" required>
+                <input type="radio" class="btn-check" name="player1Marker" id="player1MarkerX" value="X" autocomplete="off" checked style="margin: 10px;">
+                <label class="btn btn-outline-primary" for="player1MarkerX">X</label>
+                <input type="radio" class="btn-check" name="player1Marker" id="player1MarkerO" value="O" autocomplete="off">
+                <label class="btn btn-outline-primary" for="player1MarkerO">O</label>
+              </div>
+
+              <label for="player2Name">Player 2:</label>
+              <div class="playerTwoForm">
+                <input type="text" id="player2Name" name="player2Name" class="form-control" required>
+                <input type="radio" class="btn-check" name="player2Marker" id="player2MarkerX" value="X" autocomplete="off">
+                <label class="btn btn-outline-primary" for="player2MarkerX">X</label>
+                <input type="radio" class="btn-check" name="player2Marker" id="player2MarkerO" value="O" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="player2MarkerO">O</label>
+              </div>
+              <div class="formBtn">
+                <button type="submit" class="btn btn-primary">Start Game</button>
+                <button type="button" class="btn btn-danger">Cancel</button>
+              </div>
+              <p style="color: red;" id="formErrorP"></p>
+      
+
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="quickMenuBtn">
+
+        
+        <button class="btn btn-success start-button" id="startGameButton">Player vs Player</button>
+        <button class="btn btn-primary" id="quickPlay" type="button">Quick Play</button>
+        <button type="button" class="btn btn-dark position-relative">
+            Play vs AI
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              Not ready<span class="visually-hidden">Play vs AI</span></span>
+        </button>    
+        </div>
+    </div>
+
+</div>
+        
 <div class="row">
     <p id="statusMessage"></p>
 </div>
@@ -48,11 +97,9 @@
         </div>        
     </div>
 
-    <div class="row">
+    <div class="row" id="btnRows">
         <div class="btnOption">
-            <button class="btn btn-success" id="playAgain">Play Again</button>
             <button class="btn btn-success" id="resetScores">Reset Scores</button>
-            <button class="btn btn-success" id="resetBoard">Reset Board</button>
         </div>
         
     </div>
